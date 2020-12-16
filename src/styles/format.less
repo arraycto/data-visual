@@ -1,0 +1,484 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+:root {
+  --datav-panel-color: #1d2127;
+  --datav-panel-item-bg: #1b1f25;
+  --datav-panel-title-bg: #2e343c;
+  --datav-font-color: #bcc9d4;
+  --datav-border-color: rgba(255, 255, 255, 0.15);
+  --datav-main-color: #2681ff;
+  --datav-sub-main-color: #2681ff;
+  --datav-red-color: #f15532;
+  --datav-error-color: #ff4433;
+  --datav-warn-color: #f27a24;
+  --datav-gray-color: #90a0ae;
+  --datav-dark-color: #262c33;
+  --datav-main-hover-color: #409fff;
+  --datav-main-click-color: #2681ff;
+  --datav-slider-color: #74f0ff;
+  --datav-cp-bg-color: #13161a;
+  --datav-cp-border-color: #292929;
+  --datav-ft-border: 1px solid #3a4659;
+  --datav-cp-border: 1px solid #141210;
+  --datav-btn-bg-default: #303640;
+  --datav-header-bg-color: #1d1e1f;
+  --datav-gui-bg: #191c21;
+  --datav-panel-border-color: #282f3a;
+  --datav-item-hover-color: rgba(143, 225, 255, 0.1);
+  --datav-ruler-bg: #0e1013;
+  --datav-ruler-tag-bg: rgba(64, 116, 180, 1);
+  --datav-ruler-line-bg: rgba(0, 173, 255, 0.84);
+  --datav-ruler-mark-color: #3a4659;
+  --datav-ruler-font-color: #90a0ae;
+  --datav-scroll-track-bg: #1c222b;
+  --datav-com-focus-color: #2483ff;
+  --datav-com-hover-color: #409fff;
+  --datav-com-focus-bg: rgba(36, 131, 255, 0.02);
+  --datav-editor-readonly-color: #1f2329;
+  --datav-main-bg: url(https://img.alicdn.com/tfs/TB184VLcPfguuRjSspkXXXchpXa-14-14.png) repeat;
+  --datav-context-menu-bg: #27343e;
+  --datav-context-menu-line: #3a4659;
+  --datav-context-menu-hover: #1d262e;
+}
+
+body {
+  margin: 0;
+  color: var(--datav-font-color);
+  font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+figcaption,
+figure,
+main {
+  display: block;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  background-color: transparent;
+}
+
+b,
+strong {
+  font-weight: inherit;
+}
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+button,
+input {
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden;
+}
+
+button,
+select {
+  border: none;
+  text-transform: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+// ::-webkit-scrollbar {
+//   width: 8px;
+//   height: 8px;
+//   z-index: 99;
+// }
+
+// ::-webkit-scrollbar:horizontal {
+//   height: 8px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//   background: #3dabff;
+//   border-radius: 8px;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: #0a73ff;
+// }
+
+#datav-ui-root {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: FZHei-B01S;
+  src: url(/static/font/FZHei-B01S_d83f0dd.woff);
+  src: url(/static/font/FZHei-B01S_d83f0dd.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZKai-Z03S;
+  src: url(/static/font/FZKai-Z03S_10cd3cc.woff);
+  src: url(/static/font/FZKai-Z03S_10cd3cc.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZShuSong-Z01S;
+  src: url(/static/font/FZShuSong-Z01S_9270257.woff);
+  src: url(/static/font/FZShuSong-Z01S_9270257.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZFangSong-Z02S;
+  src: url(/static/font/FZFangSong-Z02S_5536860.woff);
+  src: url(/static/font/FZFangSong-Z02S_5536860.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZongYi-M05S;
+  src: url(/static/font/FZZongYi-M05S_1abdabb.woff);
+  src: url(/static/font/FZZongYi-M05S_1abdabb.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiS-R-GB;
+  src: url(/static/font/FZLanTingHeiS-R-GB_d3b0303.woff);
+  src: url(/static/font/FZLanTingHeiS-R-GB_d3b0303.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZBoYaSongS-GB;
+  src: url(/static/font/FZBoYaSongS-GB_73c639f.woff);
+  src: url(/static/font/FZBoYaSongS-GB_73c639f.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZCuHeiSongS-B-GB;
+  src: url(/static/font/FZCuHeiSongS-B-GB_c9c9631.woff);
+  src: url(/static/font/FZCuHeiSongS-B-GB_c9c9631.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZChaoCuHei-M10S;
+  src: url(/static/font/FZChaoCuHei-M10S_ac7ca24.woff);
+  src: url(/static/font/FZChaoCuHei-M10S_ac7ca24.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiS-H-GB;
+  src: url(/static/font/FZLanTingHeiS-H-GB_b8a39cd.woff);
+  src: url(/static/font/FZLanTingHeiS-H-GB_b8a39cd.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHei-DB-GBK;
+  src: url(/static/font/FZLanTingHei-DB-GBK_685283f.woff);
+  src: url(/static/font/FZLanTingHei-DB-GBK_685283f.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingKanHei-R-GBK;
+  src: url(/static/font/FZLanTingKanHei-R-GBK_767962f.woff);
+  src: url(/static/font/FZLanTingKanHei-R-GBK_767962f.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZCuYuan-M03S;
+  src: url(/static/font/FZCuYuan-M03S_4f8023c.woff);
+  src: url(/static/font/FZCuYuan-M03S_4f8023c.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZhunYuan-M02S;
+  src: url(/static/font/FZZhunYuan-M02S_dcec285.woff);
+  src: url(/static/font/FZZhunYuan-M02S_dcec285.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZTeCuGuangHuiS-R-GB;
+  src: url(/static/font/FZTeCuGuangHuiS-R-GB_8b24d1e.woff);
+  src: url(/static/font/FZTeCuGuangHuiS-R-GB_8b24d1e.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZHanZhenGuangBiaoS-GB;
+  src: url(/static/font/FZHanZhenGuangBiaoS-GB_b3e184d.woff);
+  src: url(/static/font/FZHanZhenGuangBiaoS-GB_b3e184d.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZJianZhi-M23S;
+  src: url(/static/font/FZJianZhi-M23S_16251fa.woff);
+  src: url(/static/font/FZJianZhi-M23S_16251fa.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZhengHeiS-EB-GB;
+  src: url(/static/font/FZZhengHeiS-EB-GB_c4a4f3b.woff);
+  src: url(/static/font/FZZhengHeiS-EB-GB_c4a4f3b.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZhengHeiS-R-GB;
+  src: url(/static/font/FZZhengHeiS-R-GB_0189d78.woff);
+  src: url(/static/font/FZZhengHeiS-R-GB_0189d78.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZBeiWeiKaiShu-S19S;
+  src: url(/static/font/FZBeiWeiKaiShu-S19S_8a9c28a.woff);
+  src: url(/static/font/FZBeiWeiKaiShu-S19S_8a9c28a.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZTieJinLiShu-S17S;
+  src: url(/static/font/FZTieJinLiShu-S17S_ec1ee6d.woff);
+  src: url(/static/font/FZTieJinLiShu-S17S_ec1ee6d.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZYingBiKaiShu-S15S;
+  src: url(/static/font/FZYingBiKaiShu-S15S_1daee58.woff);
+  src: url(/static/font/FZYingBiKaiShu-S15S_1daee58.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZYingBiXingShu-S16S;
+  src: url(/static/font/FZYingBiXingShu-S16S_2235873.woff);
+  src: url(/static/font/FZYingBiXingShu-S16S_2235873.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZJ-LJDFONT;
+  src: url(/static/font/FZZJ-LJDFONT_68fc050.woff);
+  src: url(/static/font/FZZJ-LJDFONT_68fc050.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZJingLeiS-R-GB;
+  src: url(/static/font/FZJingLeiS-R-GB_0bccc2a.woff);
+  src: url(/static/font/FZJingLeiS-R-GB_0bccc2a.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZShouJinShu-S10S;
+  src: url(/static/font/FZShouJinShu-S10S_62b4ce5.woff);
+  src: url(/static/font/FZShouJinShu-S10S_62b4ce5.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZMiaoWuS-GB;
+  src: url(/static/font/FZMiaoWuS-GB_70ba06f.woff);
+  src: url(/static/font/FZMiaoWuS-GB_70ba06f.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZHei-B01T;
+  src: url(/static/font/FZHei-B01T_a57116f.woff);
+  src: url(/static/font/FZHei-B01T_a57116f.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZCuYuan-M03T;
+  src: url(/static/font/FZCuYuan-M03T_5ef09db.woff);
+  src: url(/static/font/FZCuYuan-M03T_5ef09db.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZZhunYuan-M02T;
+  src: url(/static/font/FZZhunYuan-M02T_1a44311.woff);
+  src: url(/static/font/FZZhunYuan-M02T_1a44311.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZNewXiuLi-Z11T;
+  src: url(/static/font/FZNewXiuLi-Z11T_552e119.woff);
+  src: url(/static/font/FZNewXiuLi-Z11T_552e119.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZYingBiKaiShu-S15T;
+  src: url(/static/font/FZYingBiKaiShu-S15T_43da3a0.woff);
+  src: url(/static/font/FZYingBiKaiShu-S15T_43da3a0.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZBeiWeiKaiShu-Z15T;
+  src: url(/static/font/FZBeiWeiKaiShu-Z15T_d19ba06.woff);
+  src: url(/static/font/FZBeiWeiKaiShu-Z15T_d19ba06.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZBoYaSongT-GB;
+  src: url(/static/font/FZBoYaSongT-GB_f66865d.woff);
+  src: url(/static/font/FZBoYaSongT-GB_f66865d.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiT-B-GB;
+  src: url(/static/font/FZLanTingHeiT-B-GB_bf40be3.woff);
+  src: url(/static/font/FZLanTingHeiT-B-GB_bf40be3.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiT-DB-GBK;
+  src: url(/static/font/FZLanTingHeiT-DB-GBK_ad5ffd8.woff);
+  src: url(/static/font/FZLanTingHeiT-DB-GBK_ad5ffd8.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiT-R-GB;
+  src: url(/static/font/FZLanTingHeiT-R-GB_0a8eb2d.woff);
+  src: url(/static/font/FZLanTingHeiT-R-GB_0a8eb2d.woff) format("woff");
+}
+
+@font-face {
+  font-family: FZLanTingHeiT-EL-GB;
+  src: url(/static/font/FZLanTingHeiT-EL-GB_273f895.woff);
+  src: url(/static/font/FZLanTingHeiT-EL-GB_273f895.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Thin;
+  font-style: normal;
+  font-weight: 100;
+  src: url(/static/font/NotoSansSC-Thin_cc42e5e.woff);
+  src: url(/static/font/NotoSansSC-Thin_cc42e5e.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Light;
+  font-style: normal;
+  font-weight: 300;
+  src: url(/static/font/NotoSansSC-Light_aba6b6d.woff);
+  src: url(/static/font/NotoSansSC-Light_aba6b6d.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Regular;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/static/font/NotoSansSC-Regular_5fc590d.woff);
+  src: url(/static/font/NotoSansSC-Regular_5fc590d.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Medium;
+  font-style: normal;
+  font-weight: 500;
+  src: url(/static/font/NotoSansSC-Medium_16ba8f1.woff);
+  src: url(/static/font/NotoSansSC-Medium_16ba8f1.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Bold;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/static/font/NotoSansSC-Bold_f586a36.woff);
+  src: url(/static/font/NotoSansSC-Bold_f586a36.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-Black;
+  font-style: normal;
+  font-weight: 900;
+  src: url(/static/font/NotoSansSC-Black_22de1ba.woff);
+  src: url(/static/font/NotoSansSC-Black_22de1ba.woff) format("woff");
+}
+
+@font-face {
+  font-family: NotoSansSC-DemiLight;
+  src: url(/static/font/NotoSansSC-DemiLight_290d222.woff);
+  src: url(/static/font/NotoSansSC-DemiLight_290d222.woff) format("woff");
+}
+
+@font-face {
+  font-family: zcool-gdh;
+  src: url(/static/font/zcool-gdh_9a4f1b1.woff);
+  src: url(/static/font/zcool-gdh_9a4f1b1.woff) format("woff");
+}
+
+@font-face {
+  font-family: HappyZcool;
+  src: url(/static/font/HappyZcool_a5e333f.woff);
+  src: url(/static/font/HappyZcool_a5e333f.woff) format("woff");
+}
+
+@import "./antd-design";
